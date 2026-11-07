@@ -530,3 +530,40 @@ tr:nth-child(even) td {
     flex-direction: column;
   }
 }
+
+/* ===== About ===== */
+.about-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-card p {
+  margin-bottom: 1rem;
+}
+
+.more-text {
+  display: none;
+}
+
+.more-text.show {
+  display: block;
+}
+
+.motto {
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+main section ul,
+main section ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.contact-info ul,
+.highlights ul {
+  margin-left: 0;
+}

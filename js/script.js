@@ -77,3 +77,90 @@ if (modal) {
       modal.classList.remove('open');
     }
   });
+}
+
+// ===== 5. Contact form validation (compulsory) =====
+const form = document.getElementById('contact-form');
+
+function showError(fieldId, message) {
+  document.getElementById(fieldId + '-error').textContent = message;
+  document.getElementById(fieldId).classList.add('invalid');
+}
+
+function clearError(fieldId) {
+  document.getElementById(fieldId + '-error').textContent = '';
+  document.getElementById(fieldId).classList.remove('invalid');
+}
+
+if (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const success = document.getElementById('form-success');
+    let valid = true;
+
+    success.textContent = '';
+
+    if (name === '') {
+      showError('name', 'Please enter your name.');
+      valid = false;
+    } else {
+      clearError('name');
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === '') {
+      showError('email', 'Please enter your email.');
+      valid = false;
+    } else if (!emailPattern.test(email)) {
+      showError('email', 'Please enter a valid email address.');
+      valid = false;
+    } else {
+      clearError('email');
+    }
+
+    if (subject === '') {
+      showError('subject', 'Please enter a subject.');
+      valid = false;
+    } else {
+      clearError('subject');
+    }
+
+    if (message.length < 10) {
+      showError('message', 'Message must be at least 10 characters.');
+      valid = false;
+    } else {
+      clearError('message');
+    }
+
+    if (valid) {
+      success.textContent = 'Thank you, ' + name + '! Your message has been sent.';
+      form.reset();
+    }
+  });
+}
+
+// ===== 6. Read more toggle (About page) =====
+const readMoreBtn = document.getElementById('read-more-btn');
+const moreText = document.getElementById('more-text');
+
+if (readMoreBtn) {
+  readMoreBtn.addEventListener('click', function () {
+    moreText.classList.toggle('show');
+    if (moreText.classList.contains('show')) {
+      readMoreBtn.textContent = 'Read less';
+    } else {
+      readMoreBtn.textContent = 'Read more';
+    }
+  });
+}
+
+// ===== 7. Automatic copyright year =====
+const yearSpans = document.querySelectorAll('.year');
+yearSpans.forEach(function (span) {
+  span.textContent = new Date().getFullYear();
+});
