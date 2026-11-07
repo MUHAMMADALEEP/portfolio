@@ -531,6 +531,49 @@ tr:nth-child(even) td {
   }
 }
 
+/* ===== Hamburger menu ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+    padding-top: 1rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: row;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+}
+
 /* ===== About ===== */
 .about-card {
   background: var(--white);
@@ -567,3 +610,4 @@ main section ol {
 .highlights ul {
   margin-left: 0;
 }
+

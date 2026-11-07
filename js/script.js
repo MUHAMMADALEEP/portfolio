@@ -164,3 +164,13 @@ const yearSpans = document.querySelectorAll('.year');
 yearSpans.forEach(function (span) {
   span.textContent = new Date().getFullYear();
 });
+
+// ===== 8. Hamburger menu =====
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle) {
+  menuToggle.addEventListener('click', function () {
+    navLinks.classList.toggle('open');
+  });
+}
