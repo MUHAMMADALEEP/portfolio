@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Muhammad Noralif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">MN</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Projects</h1>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="electronics">Electronics</button>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card" data-category="web"
+                 data-title="Personal Portfolio Website"
+                 data-problem="Needed an online platform to showcase my skills and projects."
+                 data-role="Designer and developer"
+                 data-tools="HTML, CSS, JavaScript, GitHub Pages"
+                 data-outcome="A responsive multi-page website published online.">
+          <h3>Personal Portfolio Website</h3>
+          <p>A responsive multi-page portfolio built from scratch.</p>
+          <span class="tag">Web</span>
+          <button class="details-btn">View Details</button>
+        </article>
+
+        <article class="project-card" data-category="electronics"
+                 data-title="LED Circuit Mini-Project"
+                 data-problem="Needed to learn basic circuit design and component connection."
+                 data-role="Circuit designer and tester"
+                 data-tools="Breadboard, resistors, LEDs, multimeter"
+                 data-outcome="A working LED circuit verified with measurements.">
+          <h3>LED Circuit Mini-Project</h3>
+          <p>A basic circuit built and tested during lab sessions.</p>
+          <span class="tag">Electronics</span>
+          <button class="details-btn">View Details</button>
+        </article>
+
+        <article class="project-card" data-category="web"
+                 data-title="Simple Calculator"
+                 data-problem="Needed practice with JavaScript functions and events."
+                 data-role="Sole developer"
+                 data-tools="HTML, CSS, JavaScript"
+                 data-outcome="A calculator that performs basic arithmetic.">
+          <h3>Simple Calculator</h3>
+          <p>A small web calculator to practise JavaScript.</p>
+          <span class="tag">Web</span>
+          <button class="details-btn">View Details</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+      <h2 id="modal-title"></h2>
+      <p><strong>Problem:</strong> <span id="modal-problem"></span></p>
+      <p><strong>My role:</strong> <span id="modal-role"></span></p>
+      <p><strong>Tools:</strong> <span id="modal-tools"></span></p>
+      <p><strong>Outcome:</strong> <span id="modal-outcome"></span></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Muhammad Noralif. All rights reserved.</p>
+    <p>
+      <a href="https://github.com/MUHAMMADALEEP">GitHub</a> |
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
